@@ -264,6 +264,7 @@ in
             with inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
             with extra-addons;
             [
+              onepassword-password-manager
               # bitwarden
               ublock-origin
               sponsorblock
