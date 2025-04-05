@@ -264,6 +264,7 @@ in
             with inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
             with extra-addons;
             [
+              sidebery
               onepassword-password-manager
               # bitwarden
               ublock-origin
