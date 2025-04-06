@@ -265,7 +265,7 @@ in
             with extra-addons;
             [
               sidebery
-              onepassword-password-manager
+              (onepassword-password-manager.overrideAttrs { meta.license.free = true; })
               # bitwarden
               ublock-origin
               sponsorblock
