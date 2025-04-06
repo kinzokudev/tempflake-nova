@@ -5,6 +5,5 @@
     ./discord.nix
     ./kitty.nix
     ./tmux.nix
-    ./firefox
   ];
 }
