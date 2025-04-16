@@ -178,6 +178,7 @@
       hclfmt
       isort
       ktlint
+      ktfmt
       markdownlint-cli
       mdformat
       nixfmt-rfc-style
