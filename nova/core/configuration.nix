@@ -175,7 +175,6 @@
       gdtoolkit_4
       gofumpt
       gotools
-      golines
       hclfmt
       isort
       ktlint
