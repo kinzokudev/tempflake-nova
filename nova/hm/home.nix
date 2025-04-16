@@ -107,15 +107,6 @@
   };
 
   xdg = {
-    desktopEntries = {
-      "discord-canary" = lib.mkForce {
-        name = "Discord Canary";
-        type = "Application";
-        icon = "discord-canary";
-        terminal = false;
-        exec = "mullvad-exclude DiscordCanary --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,MiddleClickAutoscroll,UseOzonePlatform --ozone-platform=wayland";
-      };
-    };
     configFile = {
       "starship.toml".source = ./starship.toml;
       "bat/config".text = ''
