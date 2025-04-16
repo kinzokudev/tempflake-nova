@@ -63,8 +63,8 @@
       '';
       ".gitconfig".text = ''
         [user]
-          name = Kira Rene
           email = kira@renec88.xyz
+          name = kinzokudev
           signingKey = ${config.home.homeDirectory}/.ssh/id_ed25519.pub
         [gpg]
           format = ssh
