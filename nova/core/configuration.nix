@@ -295,6 +295,8 @@
       nfs-utils
 
       mumble
+
+      nixd
     ];
     sessionVariables = {
       DIRENV_LOG_FORMAT = "";
