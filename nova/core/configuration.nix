@@ -187,7 +187,7 @@
       rustywind
       shfmt
       python312Packages.sqlfmt
-      treefmt2
+      treefmt
       yamlfix
       golangci-lint
       tfsec
