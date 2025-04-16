@@ -160,6 +160,7 @@
       gcc
 
       lua-language-server
+      stylua
       typescript-language-server
       vscode-langservers-extracted
       nil
