@@ -297,6 +297,8 @@
       mumble
 
       nixd
+
+      weechat
     ];
     sessionVariables = {
       DIRENV_LOG_FORMAT = "";
