@@ -70,7 +70,17 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
+      extraLv2Packages = with pkgs; [
+        lsp-plugins
+        rnnoise-plugin
+      ];
     };
+    # jack = {
+    #   alsa.enable = true;
+    #   alsa.support32Bit = true;
+    #   jackd.enable = true;
+    # };
     openssh = {
       enable = true;
       allowSFTP = true;
@@ -90,11 +100,58 @@
       ];
       acceleration = "rocm";
     };
+
+    keyd = {
+      enable = true;
+      keyboards = {
+        default = {
+          ids = [ "*" ];
+          settings = {
+            main = {
+              capslock = "overload(symbols, esc)";
+            };
+            symbols = {
+              "1" = "kp1";
+              "2" = "kp2";
+              "3" = "kp3";
+              "4" = "kp4";
+              "5" = "kp5";
+              "6" = "kp6";
+              "7" = "kp7";
+              "8" = "kp8";
+              "9" = "kp9";
+            };
+          };
+        };
+      };
+    };
+
+    flatpak = {
+      enable = true;
+      packages = [
+        "org.vinegarhq.Sober"
+      ];
+    };
   };
 
   # Enable sound.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    amdgpu = {
+      opencl = {
+        enable = true;
+      };
+      initrd = {
+        enable = true;
+      };
+    };
+  };
 
   # enable passwordless sudo
   security.sudo = {
@@ -129,6 +186,8 @@
         "qemu-libvirtd"
         "libvirtd"
         "disk"
+        "docker"
+        "jackaudio"
       ];
       packages = with pkgs; [
         tree
@@ -166,7 +225,6 @@
       nil
       eslint
       ruff
-      ruff-lsp
       pyright
       jdt-language-server
       kotlin-language-server
@@ -235,7 +293,6 @@
       unzip
 
       zoxide
-      thefuck
       tldr
       scc
       eza
@@ -299,6 +356,43 @@
       nixd
 
       weechat
+
+      sshfs
+
+      gimp
+
+      python3
+      python312Packages.pip
+      pipx
+      multipath-tools
+      openssl
+
+      termsonic
+
+      arduino-ide
+      arduino-cli
+      arduino
+      arduino-language-server
+
+      vlc
+      qbittorrent
+
+      libclang
+
+      pkg-config
+      libudev-zero
+
+      reaper
+      tunefish
+
+      lumafly
+
+      dpkg
+
+      osu-lazer-bin
+
+      musescore
+      lmms
     ];
     sessionVariables = {
       DIRENV_LOG_FORMAT = "";
@@ -369,6 +463,10 @@
 
     noisetorch.enable = true;
     nix-ld.enable = true;
+
+    fuse = {
+      userAllowOther = true;
+    };
   };
 
   virtualisation = {
@@ -387,6 +485,9 @@
         ovmf.enable = true;
       };
     };
+    docker = {
+      enable = true;
+    };
   };
 
   systemd.tmpfiles.rules = [
@@ -397,6 +498,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "libsoup-2.74.3"
+      ];
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
           extraPkgs =

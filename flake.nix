@@ -45,9 +45,6 @@
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
     };
-    hyprswitch = {
-      url = "github:H3rmt/hyprswitch/release";
-    };
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     };
@@ -116,7 +113,7 @@
 
       userinfo = {
         name = "kinzoku";
-        email = "kinzoku@the-nebula.xyz";
+        email = "kin@kinzoku.dev";
         altemail = "kinzokudev4869@gmail.com";
         timezone = "America/New_York";
         handles = {
@@ -171,6 +168,7 @@
             hostname = "NOVA";
           };
           modules = [
+            inputs.nix-flatpak.nixosModules.nix-flatpak
             ./nova
           ];
         };

@@ -106,6 +106,10 @@
         unittest.xml
       '';
     };
+
+    sessionVariables = {
+      DIRENV_LOG_FORMAT = "";
+    };
   };
 
   xdg = {
@@ -419,13 +423,14 @@
     zoxide = {
       enable = true;
     };
-    thefuck = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    # thefuck = {
+    #   enable = true;
+    #   enableFishIntegration = true;
+    # };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      silent = true;
     };
     mise = {
       enable = true;
@@ -454,6 +459,20 @@
     chromium = {
       enable = true;
       package = pkgs.ungoogled-chromium;
+    };
+    hyfetch = {
+      enable = true;
+      settings = {
+        preset = "lesbian";
+        mode = "rgb";
+        color_align = {
+          mode = "horizontal";
+        };
+      };
+    };
+
+    mangohud = {
+      enable = true;
     };
   };
   nixpkgs.config.allowUnfree = true;

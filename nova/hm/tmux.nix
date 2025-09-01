@@ -69,7 +69,8 @@
       set -g status-justify left
       set -g status-style 'fg=blue'
 
-      set -g status-left ""
+      set -g status-left-style 'fg=brightcyan'
+      set -g status-left '[#S] '
       set -g status-left-length 10
 
       set -g status-right-style 'fg=black bg=cyan'

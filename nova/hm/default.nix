@@ -5,5 +5,6 @@
     ./discord.nix
     ./kitty.nix
     ./tmux.nix
+    ./obs
   ];
 }
